@@ -4,21 +4,25 @@ print('''1- Windows Server
 3- Linux
 4- Netware
 5- Mac OS
-6- Outro''')
+6- Outro
+Pressione 0 para sair. ''')
 
 opcoes = ['Windows Server', 'Unix', 'Linux', 'Netware', 'Mac OS', 'Outro']
 sistemas = [0] * 6
 while True:
     while True:
-        opcao = int(input('Digite a opção: '))
-        if opcao > 6 or opcao < 0:
-            print('Opção inválida.')
-        else:
-            break
+        try:
+            opcao = int(input('Digite a opção: '))
+            if opcao > 6 or opcao < 0:
+                print('Opção inválida. Digite um número entre 0 e 6.')
+            else:
+                break
+        except ValueError:
+            print('Entrada inválida. Por favor, digite um número inteiro entre 0 e 6.')
+
     if opcao == 0:
         break
     sistemas[opcao - 1] = sistemas[opcao - 1] + 1
-
 
 print('Sistema Operacional     Votos  %')
 print('----------------------------------')
