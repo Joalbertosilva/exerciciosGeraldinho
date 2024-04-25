@@ -1,4 +1,4 @@
-from fila import *
+from atv2.fila import *
 
 print('Atendimento de clientes')
 enter = '\n....Digite ENTER'
